@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JDBSUtils {
+public class JDBCUtils {
     //methods static
     //establishConnection()
     //run sql query(String query) ->  will return listOfMaps,
@@ -72,6 +72,7 @@ public class JDBSUtils {
      */
     public static int countRows(String query) throws SQLException {
         resultSet = statement.executeQuery(query);
+        resultSet.last();
         return resultSet.getRow();
 
     }
